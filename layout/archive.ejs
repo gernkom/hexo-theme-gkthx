@@ -1,0 +1,13 @@
+<%- partial('_partial/own') %>
+
+<section class="archive">
+  <div class="post-archive">
+
+    <% page.posts.each(function (post) { %>
+      <a class="post-item" href="<%- url_for(post.path) %>"> <%= date(post.date, "YYYY-MM-DD") %> <%= post.title %> </a>
+    <% }) %>
+
+  </div>
+</section>
+
+<div style="height: 50px"> </div>
