@@ -99,4 +99,238 @@ a:hover {
 	width: 80%;
 }
 
-@import "_partial/code"
+
+
+
+
+
+
+
+
+
+.post-content {
+  @for $i from 1 through 6 {
+    h#{$i} {
+      font-weight: 400;
+      font-family: $global-serif-font-family;
+    }
+  }
+
+  .headerlink {
+    &:hover {
+      border-bottom: 0;
+    }
+
+    &::before {
+      content: $content-headings-anchor;
+      margin-right: 5px;
+      font-size: 1.1em;
+      color: $theme-color;
+    }
+  }
+
+  a {
+    color: $theme-color;
+    word-break: break-all;
+
+    &:hover {
+      border-bottom: $content-link-border;
+    }
+
+    &.fancybox {
+      border: 0;
+    }
+  }
+
+  blockquote {
+    margin: 2em 0;
+    padding: 10px 20px;
+    position: relative;
+    color: rgba(#34495e, 0.8);
+    background-color: $content-blockquote-backgroud;
+    border-left: $content-blockquote-border-left;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
+
+    p {
+      margin: 0;
+    }
+  }
+
+  img {
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  .table-responsive {
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: auto;
+    border: 3px double $content-table-border-color;
+
+    table {
+      width: 100%;
+      max-width: 100%;
+      border-spacing: 0;
+      box-shadow: 2px 2px 3px rgba(0,0,0,.125);
+
+      thead {
+        background: $deputy-color;
+      }
+
+      th, td {
+        padding: 5px 15px;
+        border: 1px double $content-table-border-color;
+      }
+    }
+  }
+
+code, pre {
+  padding: 7px;
+  font-size: $code-font-size;
+  font-family: $code-font-family;
+  background: $code-background;
+}
+
+code {
+  padding: 3px 5px;
+  border-radius: 4px;
+  color: $code-color;
+}
+
+.highlight {
+  margin: 1em 0;
+  border-radius: 5px;
+  overflow-x: auto;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
+  position: relative;
+
+  table {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      padding: 2px 7px;
+      font-weight: bold;
+      content: 'Code';
+    }
+  }
+
+  figcaption {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 2px 7px;
+    font-weight: bold;
+    z-index: 20;
+    overflow-x: hidden;
+    box-sizing: border-box;
+
+    & > a {
+      position: absolute;
+      right: 0;
+      display: inline-box;
+      margin-right: 7px;
+      font-weight: 400;
+
+      &:hover {
+        text-decoration: none;
+        border: 0;
+      }
+    }
+  }
+
+  .code {
+    pre {
+      margin: 0;
+      padding: 30px 10px 10px;
+    }
+  }
+
+  .gutter {
+    width: 10px;
+    color: $gray;
+
+    pre {
+      margin: 0;
+      padding: 30px 7px 10px;
+    }
+  }
+
+  table, tr, td {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .code {
+    .comment,
+    .quote {
+      color: map-get($code-highlight-color, comment);
+    }
+
+    .keyword,
+    .selector-tag,
+    .addition {
+      color: map-get($code-highlight-color, keyword);
+    }
+
+    .number,
+    .string,
+    .meta .meta-string,
+    .literal,
+    .doctag,
+    .regexp {
+      color: map-get($code-highlight-color, number);
+    }
+
+    .title,
+    .section,
+    .name,
+    .selector-id,
+    .selector-class {
+      color: map-get($code-highlight-color, title);
+    }
+
+    .attribute,
+    .attr,
+    .variable,
+    .template-variable,
+    .class .title,
+    .type {
+      color: map-get($code-highlight-color, attribute);
+    }
+
+    .symbol,
+    .bullet,
+    .subst,
+    .meta,
+    .meta .keyword,
+    .selector-attr,
+    .selector-pseudo,
+    .link {
+      color: map-get($code-highlight-color, symbol);
+    }
+
+    .built_in,
+    .deletion {
+      color: map-get($code-highlight-color, built_in);
+    }
+  }
+}
+
+  .read-more {
+    .read-more-link {
+      color: $theme-color;
+      font-size: 1.1em;
+      font-family: $global-serif-font-family;
+
+      &:hover {
+        border-bottom: $post-readMore-border-bottom;
+      }
+    }
+  }
+}
