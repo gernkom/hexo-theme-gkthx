@@ -1,26 +1,25 @@
 <div class="post">
-  <div class="post-title" style="text-align: center">
-    <h2 class="title"><%= page.title %></h2>
-  </div>
+        <div class="post-title" style="text-align: center">
+                <h2 class="title"><%= page.title %></h2>
+        </div>
+
+        <div class="post-meta">
+                <span class="post-time" style="float: left"><%- date(page.date, "YYYY-MM-DD") %></span>
+                <div class="post-tags">
+                        <span style="margin-left: 5em"> Tags: </span>
+                        <% if (page.tags && page.tags.length){ %>
+                                <%- list_tags(page.tags, {
+                                        show_count: false,
+                                        style: 'none',
+                                        separator: ' '
+                                }) %>
+                        <% } %>
+                </div>
+        </div>
 
 
-  <div class="post-meta">
-    <span class="post-time" style="float: left"><%- date(page.date, "YYYY-MM-DD") %></span>
-    <div class="post-tags">
-    <span style="margin-left: 5em"> Tags: </span>
-<% if (page.tags && page.tags.length){ %>
-  <%- list_tags(page.tags, {
-    show_count: false,
-    style: 'none',
-    separator: ' '
-  }) %>
-<% } %>
-</div>
-  </div>
-
-
-  <div class="post-content">
-    <%- page.content %>
-  </div>
-  <div style="height: 50px"> </div>
+        <div class="post-content">
+                <%- page.content %>
+        </div>
+        <div style="height: 50px"> </div>
 </div>
