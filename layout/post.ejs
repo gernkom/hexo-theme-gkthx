@@ -21,5 +21,21 @@
         <div class="post-content">
                 <%- page.content %>
         </div>
-        <div style="height: 50px"> </div>
+
+	<nav class="page-next-prev">
+		<% if (page.prev) { %>
+			<a class="page-prev" href="<%- url_for(page.prev.path) %>">
+				<i class="fa fa-hand-o-left fa-lg"> </i>
+				<span> <%= page.prev.title %> </span>
+			</a>
+		<% } %>
+		<% if (page.next) { %>
+			<a class="page-next" href="<%- url_for(page.next.path) %>">
+				<span> <%= page.next.title %> </span>
+				<i class="fa fa-hand-o-right fa-lg"> </i>
+			</a>
+		<% } %>
+	</nav>
+
+	<div style="height: 50px"> </div>
 </div>
