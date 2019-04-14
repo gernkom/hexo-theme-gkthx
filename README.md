@@ -1,6 +1,6 @@
 # hexo-theme-gkthx
 
-a simple theme for Hexo https://poorguy.work
+a simple theme for Hexo https://gernkom.dev
 
 **說明**
 
