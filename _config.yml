@@ -1,5 +1,15 @@
 menu:
-        Home: /
-        Archives: /archives
-        About: /about
+  home: /
+  archives: /archives
 
+config:
+  your_name: gernkom Tsang
+  your_github: https://github.com/gernkom
+  your_mail: gernkom@163.com
+  your_telegram: https://t.me/gernkom
+  motto: 何必每件壯舉都需要理由
+  start_year: 2017
+
+site:
+  favicon: /favicon.ico
+  logo: /logo.png # source 文件下的 logo.png 文件

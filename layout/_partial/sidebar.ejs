@@ -1,31 +1,33 @@
 <input type='checkbox' id='sideToggle'>
 <aside>
 	<div class="sidebar">
-		<img src="/me.png" />
-		<center><p style="font-size: 15px; "> 紙上得來終覺淺 </p></center>
-		<a href="/">
-			<i class="fa fa-home fa-lg"> Home </i>
-		</a>
-		<br></br>
-		<a href="/archives">
-			<i class="fa fa-folder-open fa-lg"> Archives </i>
-		</a>
-		<br></br>
-		<a href="/about">
-			<i class="fa fa-id-card fa-lg"> About </i>
-		</a>
-		<br /><br />
+		<img src="<%- url_for(theme.site.logo) %>" />
+		<p style="font-size: 15px; "> <%= theme.config.motto %> </p>
+
+		<% if(theme.menu.home) { %>
+			<a href="<%= theme.menu.home %>"> <i class="fa fa-home fa-lg"> Home </i></a>
+			<br></br>
+		<% } %>
+		<% if(theme.menu.archives) { %>
+			<a href="<%= theme.menu.archives %>"> <i class="fa fa-folder-open fa-lg"> archives </i></a>
+			<br></br>
+		<% } %>
+		<% if(theme.menu.about) { %>
+			<a href="<%= theme.menu.about %>"> <i class="fa fa-id-card fa-lg"> About </i></a>
+			<br></br>
+		<% } %>
+
 		<center><p style="font-size: 20px;">Contact me: </p></center>
 		<center>
-			<a href="https://github.com/gernkom">
+			<a href="<%- url_for(theme.config.your_github) %>">
 				<i class="fa fa-github fa-lg"></i>
 			</a>
 			<span>|</span>
-			<a href="mailto:poooooooorguy@gmail.com">
+			<a href="mailto:<%= theme.config.your_mail %>">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 			<span>|</span>
-			<a href="https://t.me/gernkom">
+			<a href="<%- url_for(theme.config.your_telegram) %>">
 				<i class="fa fa-telegram fa-lg"></i>
 			</a>
 		</center>
@@ -35,7 +37,7 @@
 		Power by <a href="https://hexo.io">Hexo</a> | Theme - <a href="https://github.com/gernkom/hexo-theme-gkthx">gkthx</a>
 		<br/>
 		<% var current = date(Date.now(),'YYYY') %>
-		&#169; 2018 - <%= current %> <i class="fa fa-male"></i> gernkom Tsang
+		&#169; <%= theme.config.start_year %> - <%= current %> <i class="fa fa-male"></i> <%= theme.config.your_name %>
 	</div>
 </aside> 
 <div id='wrap'>  
